@@ -1,0 +1,25 @@
+{
+    "title": "The Childlike Life of the Black Tarantula",
+    "author": "The Black Tarantula",
+    "texts": [
+        {
+            "section": 1,
+            "section_title": "I become a murderess.",
+            "section_paras": {
+                "1": "placeholder",
+                "2": "placeholder",
+                "3": "placeholder"
+            }
+        },
+        {
+                "source_title": "placeholder",
+                "source_author": "placeholder",
+                "source_paras": {
+                    "1": "placeholder",
+                    "2": "placeholder",
+                    "3": "placeholder"
+                }
+            }
+        }
+    ]
+}
