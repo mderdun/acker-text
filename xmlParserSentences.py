@@ -12,7 +12,7 @@ nltk.download('punkt')
 sentences_dict = {}
 
 # List of subfolders where XML files are located
-subfolders = ["blackTarantula", "sources"]
+subfolders = ["blackTarantula", "sources", "bio"]
 
 # Iterate over subfolders and XML files
 for subfolder in subfolders:
@@ -43,6 +43,9 @@ for subfolder in subfolders:
 
             # Remove all newlines
             sentences = [re.sub(r'\n', '', sentence) for sentence in sentences]
+
+            # Remove blank spaces at the beginning of sentences
+            sentences = [sentence.lstrip() for sentence in sentences]
 
             # Add the sentences to the dictionary
             # Remove .xml extension from filename
