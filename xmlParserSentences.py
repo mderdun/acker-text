@@ -1,11 +1,10 @@
 import xml.etree.ElementTree as ET
 import os
 import json
-import nltk
 import re
-from nltk.tokenize import sent_tokenize
+import nltk
 
-# If missing, download the punkt package
+# Load the nltk punkt tokenizer
 nltk.download('punkt')
 
 # Create a dictionary to store the sentences for each XML file
@@ -36,7 +35,7 @@ for subfolder in subfolders:
                 result = "".join(string)
 
             # Sentence Tokenize and add to list
-            sentences = sent_tokenize(str(result))
+            sentences = nltk.sent_tokenize(result)
 
             # Remove all empty strings
             sentences = list(filter(None, sentences))
@@ -44,8 +43,8 @@ for subfolder in subfolders:
             # Remove all newlines
             sentences = [re.sub(r'\n', '', sentence) for sentence in sentences]
 
-            # Remove blank spaces at the beginning of sentences
-            sentences = [sentence.lstrip() for sentence in sentences]
+            # Remove whitespace at the beginning of sentences
+            sentences = [re.sub(r'^\s+', '', sentence) for sentence in sentences]
 
             # Add the sentences to the dictionary
             # Remove .xml extension from filename
